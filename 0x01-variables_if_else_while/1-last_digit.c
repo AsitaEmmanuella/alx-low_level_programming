@@ -1,46 +1,28 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+/* more headers goes there */
+#include <stdio.h>
 
+/* betty style doc for function main goes there */
 /**
- * main - Entry point of the program
+ * main - main function
  *
- * Description: This program generates a two-digit random number and
- *              prints the last digit of that number along with
- *              whether it's greater than 5, equal to 0, or less
- *              than 6 and not 0.
- *
- * Return: Always 0 (Success)
+ * Return: when succesful
  */
 int main(void)
 {
 	int n;
-	int lastDigit;
+	int b;
 
 	srand(time(0));
-
-	n = rand() % 90 + 10;
-
-	lastDigit = n % 10;
-
-
-	printf("Last digit of %d is %d", n, lastDigit);
-
-
-	if (lastDigit > 5)
-	{
-		printf(" and is greater than 5\n");
-	}
-	else if (lastDigit == 0)
-	{
-		printf(" and is 0\n");
-	}
-	else
-	{
-		printf(" and is less than 6 and not 0\n");
-	}
-
+	n = rand() - RAND_MAX / 2;
+	/* your code goes there */
+	b = n % 10;
+	if (b > 5)
+		printf("Last digit of %d is %d and is greater than 5\n", n, b);
+	else if (b == 0)
+		printf("Last digit of %d is %d and is 0\n", n, b);
+	else if (b < 6 && b != 0)
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, b);
 	return (0);
 }
-
-
