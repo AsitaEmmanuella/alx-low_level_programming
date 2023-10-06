@@ -5,7 +5,7 @@
 /**
  * main - Entry point of the program
  *
- * Description: This program generates a random number and
+ * Description: This program generates a two-digit random number and
  *              prints the last digit of that number along with
  *              whether it's greater than 5, equal to 0, or less
  *              than 6 and not 0.
@@ -17,16 +17,15 @@ int main(void)
 	int n;
 	int lastDigit;
 
-
 	srand(time(0));
 
-
-	n = rand();
+	n = rand() % 90 + 10;
 
 	lastDigit = n % 10;
 
 
 	printf("Last digit of %d is %d", n, lastDigit);
+
 
 	if (lastDigit > 5)
 	{
@@ -43,4 +42,5 @@ int main(void)
 
 	return (0);
 }
+
 
