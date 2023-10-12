@@ -1,24 +1,37 @@
 #include "main.h"
+void print_integer(int m);
 
 /**
- * print_integer - A function to print n
+ * print_number - a function that prints an integer.
+ * @n: An input integer
+ * Return: Nothing
+ */
+void print_number(int n)
+{
+	if (n == 0)
+		_putchar('0');
+	else if (n < 0)
+	{
+		_putchar('-');
+		print_integer(n * -1);
+	}
+	else
+		print_integer(n);
+}
+
+/**
+ * print_integer - A function to priting n
  * @m: an input unsigned integer
  * Return: Nothing
  */
 void print_integer(int m)
 {
-	int i = 1;
-	int is_started = 0;
+	int i = 1000000000;
 
-	while (i <= m)
-	{
-		int digit = (m / i) % 10;
-		if (is_started || digit > 0 || i == m)
+	for (; i >= 1; i /= 10)
+		if (m / i != 0)
 		{
-			_putchar(digit + '0');
-			is_started = 1;
+			_putchar((m / i) % 10 + '0');
 		}
-		i *= 10;
-	}
 }
 
